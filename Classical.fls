@@ -1,0 +1,86 @@
+include("Propositional-Logic/Minimal/Rules/Disjunction.fls")
+include("Propositional-Logic/Minimal/Rules/Negation introduction.fls")
+include("Propositional-Logic/Minimal/Derived rules/Modus tollens.fls")
+include("Propositional-Logic/Classical/Rules/The law of the excluded middle.fls")
+include("Propositional-Logic/Classical/Derived rules/Double negation elimination.fls")
+
+Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
+  Premise
+    ⌐(⌐P∧⌐Q)
+  Conclusion
+    P∨Q
+  Proof
+    Suppose
+      Q
+    Hence
+      P∨Q by DisjunctionIntroduction
+    Q=>P∨Q
+    
+    Suppose
+      ⌐Q
+    Then
+      Suppose
+        ⌐P
+      Hence
+        ⌐P∧⌐Q by ConjunctionIntroduction  
+      ⌐P=>(⌐P∧⌐Q)
+      ⌐(⌐P∧⌐Q) /* Premise */
+      ⌐⌐P by ModusTollens
+      P by DoubleNegationElimination
+    Hence
+      P∨Q by DisjunctionIntrocution
+    ⌐Q=>P∨Q
+
+    Q∨⌐Q by LawOfTheExcludedMiddle
+  Therefore
+    P∨Q by DisjunctionElimination
+
+Rule (NegationOfDisjunctionOfNegationsImpliesConjunction)
+  Premise
+    ⌐(⌐P∨⌐Q)
+  Conclusion
+    P∧Q
+  Proof
+    Suppose
+      ⌐(P∧Q)
+    Hence
+      ⌐P∨⌐Q by NegationOfConjuctionImpliesDisjunctionOfNegations
+    ⌐(P∧Q)=>(⌐P∨⌐Q)
+    ⌐(⌐P∨⌐Q)
+    ⌐⌐(P∧Q) by ModusTollens
+  Therefore
+    P∧Q by DoubleNegationElimination
+
+Rule (NegationOfConjuctionImpliesDisjunctionOfNegations)
+  Premise
+    ⌐(P∧Q)
+  Conclusion
+    ⌐P∨⌐Q
+  Proof
+    Suppose
+      ⌐(⌐P∨⌐Q)
+    Then
+      Suppose
+        P
+      Then
+        Suppose
+          Q
+        Then
+          P
+        Hence
+          P∧Q    
+        Q=>P∧Q
+        ⌐(P∧Q)
+        ⌐Q by ModusTollens
+      Hence
+        ⌐P∨⌐Q by DisjunctionIntroduction
+      P=>⌐P∨⌐Q
+      ⌐(⌐P∨⌐Q)
+      ⌐P by ModusTollens
+    Hence
+      ⌐P∨⌐Q by DisjunctionIntroduction
+    ⌐(⌐P∨⌐Q)=>⌐P∨⌐Q
+    ⌐(⌐P∨⌐Q)=>⌐(⌐P∨⌐Q)
+    ⌐⌐(⌐P∨⌐Q) by NegationIntroduction
+  Therefore
+    ⌐P∨⌐Q by DoubleNegationElimination

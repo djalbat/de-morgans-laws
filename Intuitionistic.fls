@@ -1,0 +1,143 @@
+include("Propositional-Logic/Minimal/Rules/Conjunction.fls")
+include("Propositional-Logic/Minimal/Rules/Negation introduction.fls")
+include("Propositional-Logic/Minimal/Derived rules/Distributivity.fls")
+include("Propositional-Logic/Minimal/Derived rules/Constructive dilemma.fls")
+include("Propositional-Logic/Intuitionistic/Rules/The principle of explosion.fls")
+include("Propositional-Logic/Intuitionistic/Derived rules/Contradiction elimination.fls")
+
+Rule (ConjunctionImpliesNegationOfDisjunctionOfNegations)
+  Premise
+    P∧Q
+  Conclusion
+    ⌐(⌐P∨⌐Q)
+  Proof
+    P
+    Q
+    Suppose
+      ⌐P∨⌐Q
+    Then
+      Q
+      Q∧(⌐P∨⌐Q)
+      (⌐P∧Q)∨(⌐Q∧Q) by ConjunctionDistributesOverDisjunction
+      ⌐P∧Q by ContradictionElimination
+    Hence
+      Q
+    (⌐P∨⌐Q)=>Q
+
+    Suppose
+      ⌐P∨⌐Q
+    Then
+      P
+      P∧(⌐P∨⌐Q)
+      (P∧⌐P)∨(P∧⌐Q) by ConjunctionDistributesOverConjunction
+      P∧⌐Q by ContradictionElimination
+    Hence
+      ⌐Q
+    (⌐P∨⌐Q)=>⌐Q
+  Therefore
+    ⌐(⌐P∨⌐Q) by NegationIntroduction
+
+Rule (DisjunctionImpliesNegationOfConjunctionOfNegations)
+  Premise
+    P∨Q
+  Conclusion
+    ⌐(⌐P∧⌐Q)
+  Proof
+    Suppose
+      ⌐P∧⌐Q
+    Then
+      ⌐Q
+      ⌐Q∧(P∨Q)
+      (P∧⌐Q)∨(Q∧⌐Q) by ConjunctionDistributesOverDisjunction
+      (P∧⌐Q) by ContradictionElimination
+    Hence
+      P
+    ⌐P∧⌐Q=>P
+
+    Suppose
+      ⌐P∧⌐Q
+    Hence
+      ⌐P
+    ⌐P∧⌐Q=>⌐P
+  Therefore
+    ⌐(⌐P∧⌐Q) by NegationIntroduction
+
+Rule (DisjunctionOfNegationsImpliesNegationOfConjuction)
+  Premise
+    ⌐P∨⌐Q
+  Conclusion
+    ⌐(P∧Q)
+  Proof
+    Suppose
+      P∧Q
+    Hence
+      Q
+    (P∧Q)=>Q
+
+    Suppose
+      P∧Q
+    Then
+      P
+      P∧(⌐P∨⌐Q)
+      (P∧⌐P)∨(P∧⌐Q) by ConjunctionDistributesOverDisjunction
+      P∧⌐Q by ContradictionElimination
+    Hence
+      ⌐Q
+    (P∧Q)=>⌐Q
+  Therefore
+    ⌐(P∧Q) by NegationIntroduction
+
+Rule (ConjunctionOfNegationsImpliesNegationOfDisjunction)
+  Premise
+    ⌐P∧⌐Q
+  Conclusion
+    ⌐(P∨Q)
+  Proof
+    ⌐P
+    ⌐Q
+
+    Suppose
+      P∨Q
+    Then
+      P=>S by PrincipleOfExplosion
+      Q=>S by PrincipleOfExplosion
+    Hence
+      S by ConstructiveDilema
+    P∨Q=>S
+
+    Suppose
+      P∨Q
+    Then
+      P=>⌐S by PrincipleOfExplosion
+      Q=>⌐S by PrincipleOfExplosion
+    Hence
+      ⌐S by ConstructiveDilema
+    P∨Q=>⌐S
+  Therefore
+    ⌐(P∨Q) by NegationIntroduction
+
+Rule (NegationOfDisjunctionImpliesConjuctionOfNegations)
+  Premise
+    ⌐(P∨Q)
+  Conclusion
+    ⌐P∧⌐Q
+  Proof
+    Suppose
+      P
+    Then
+      P∨Q
+    Hence 
+      (P∨Q)∧⌐(P∨Q)
+    P=>(P∨Q)∧⌐(P∨Q)
+    ⌐P by NegationIntroduction
+
+    Suppose
+      Q
+    Then
+      P∨Q
+    Hence 
+      (P∨Q)∧⌐(P∨Q)
+    Q=>(P∨Q)∧⌐(P∨Q)
+    ⌐Q by NegationIntroduction
+  Therefore
+    ⌐P∧⌐Q by ConjunctionIntroduction
