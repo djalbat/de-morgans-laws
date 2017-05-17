@@ -1,5 +1,5 @@
-include("Propositional-Logic/Minimal/Rules/Conjunction.fls")
 include("Propositional-Logic/Minimal/Rules/Negation introduction.fls")
+include("Propositional-Logic/Minimal/Rules/Conjunction.fls")
 include("Propositional-Logic/Minimal/Derived rules/Distributivity.fls")
 include("Propositional-Logic/Minimal/Derived rules/Constructive dilemma.fls")
 include("Propositional-Logic/Intuitionistic/Rules/The principle of explosion.fls")
