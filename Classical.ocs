@@ -1,9 +1,3 @@
-include("Propositional-Logic/Minimal/Rules/Disjunction.fls")
-include("Propositional-Logic/Minimal/Rules/Negation introduction.fls")
-include("Propositional-Logic/Minimal/Derived rules/Modus tollens.fls")
-include("Propositional-Logic/Classical/Rules/The law of the excluded middle.fls")
-include("Propositional-Logic/Classical/Derived rules/Double negation elimination.fls")
-
 Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
   Premise
     ⌐(⌐P∧⌐Q)
@@ -15,7 +9,6 @@ Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
     Hence
       P∨Q by DisjunctionIntroduction
     Q=>P∨Q
-    
     Suppose
       ⌐Q
     Then
@@ -30,7 +23,6 @@ Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
     Hence
       P∨Q by DisjunctionIntrocution
     ⌐Q=>P∨Q
-
     Q∨⌐Q by LawOfTheExcludedMiddle
   Therefore
     P∨Q by DisjunctionElimination
