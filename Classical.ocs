@@ -1,56 +1,56 @@
 Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
   Premise
-    ⌐(⌐P∧⌐Q)
+    ¬(¬P∧¬Q)
   Conclusion
     P∨Q
   Proof
     Suppose
       Q
     Hence
-      P∨Q by DisjunctionIntroduction
+      P∨Q by DisjunctionLeftIntroduction
     Q=>P∨Q
     Suppose
-      ⌐Q
+      ¬Q
     Then
       Suppose
-        ⌐P
+        ¬P
       Hence
-        ⌐P∧⌐Q by ConjunctionIntroduction  
-      ⌐P=>(⌐P∧⌐Q)
-      ⌐(⌐P∧⌐Q) /* Premise */
-      ⌐⌐P by ModusTollens
+        ¬P∧¬Q by ConjunctionIntroduction  
+      ¬P=>(¬P∧¬Q)
+      ¬(¬P∧¬Q)
+      ¬¬P by ModusTollens
       P by DoubleNegationElimination
     Hence
-      P∨Q by DisjunctionIntrocution
-    ⌐Q=>P∨Q
-    Q∨⌐Q by LawOfTheExcludedMiddle
+      P∨Q by DisjunctionLeftIntroduction
+    ¬Q=>P∨Q
+    Q∨¬Q by TheLawOfTheExludedMiddle
   Therefore
     P∨Q by DisjunctionElimination
 
 Rule (NegationOfDisjunctionOfNegationsImpliesConjunction)
   Premise
-    ⌐(⌐P∨⌐Q)
+    ¬(¬P∨¬Q)
   Conclusion
     P∧Q
   Proof
     Suppose
-      ⌐(P∧Q)
+      ¬(P∧Q)
     Hence
-      ⌐P∨⌐Q by NegationOfConjuctionImpliesDisjunctionOfNegations
-    ⌐(P∧Q)=>(⌐P∨⌐Q)
-    ⌐(⌐P∨⌐Q)
-    ⌐⌐(P∧Q) by ModusTollens
+      ¬P∨¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
+    ¬(P∧Q)=>(¬P∨¬Q)
+    ¬(¬P∨¬Q)
+    ¬¬(P∧Q) by ModusTollens
   Therefore
     P∧Q by DoubleNegationElimination
 
 Rule (NegationOfConjuctionImpliesDisjunctionOfNegations)
   Premise
-    ⌐(P∧Q)
+    ¬(P∧Q)
   Conclusion
-    ⌐P∨⌐Q
+    ¬P∨¬Q
   Proof
     Suppose
-      ⌐(⌐P∨⌐Q)
+      ¬(¬P∨¬Q)
     Then
       Suppose
         P
@@ -62,17 +62,17 @@ Rule (NegationOfConjuctionImpliesDisjunctionOfNegations)
         Hence
           P∧Q    
         Q=>P∧Q
-        ⌐(P∧Q)
-        ⌐Q by ModusTollens
+        ¬(P∧Q)
+        ¬Q by ModusTollens
       Hence
-        ⌐P∨⌐Q by DisjunctionIntroduction
-      P=>⌐P∨⌐Q
-      ⌐(⌐P∨⌐Q)
-      ⌐P by ModusTollens
+        ¬P∨¬Q by DisjunctionLeftIntroduction
+      P=>¬P∨¬Q
+      ¬(¬P∨¬Q)
+      ¬P by ModusTollens
     Hence
-      ⌐P∨⌐Q by DisjunctionIntroduction
-    ⌐(⌐P∨⌐Q)=>⌐P∨⌐Q
-    ⌐(⌐P∨⌐Q)=>⌐(⌐P∨⌐Q)
-    ⌐⌐(⌐P∨⌐Q) by NegationIntroduction
+      ¬P∨¬Q by DisjunctionLeftIntroduction
+    ¬(¬P∨¬Q)=>¬P∨¬Q
+    ¬(¬P∨¬Q)=>¬(¬P∨¬Q)
+    ¬¬(¬P∨¬Q) by NegationIntroduction
   Therefore
-    ⌐P∨⌐Q by DoubleNegationElimination
+    ¬P∨¬Q by DoubleNegationElimination

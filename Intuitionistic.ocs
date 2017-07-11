@@ -2,135 +2,129 @@ Rule (ConjunctionImpliesNegationOfDisjunctionOfNegations)
   Premise
     P∧Q
   Conclusion
-    ⌐(⌐P∨⌐Q)
+    ¬(¬P∨¬Q)
   Proof
     P
     Q
     Suppose
-      ⌐P∨⌐Q
+      ¬P∨¬Q
     Then
       Q
-      Q∧(⌐P∨⌐Q)
-      (⌐P∧Q)∨(⌐Q∧Q) by ConjunctionDistributesOverDisjunction
-      ⌐P∧Q by ContradictionElimination
+      Q∧(¬P∨¬Q)
+      (¬P∧Q)∨(¬Q∧Q) by ConjunctionDistributesOverDisjunction
+      ¬P∧Q by ContradictionElimination
     Hence
       Q
-    (⌐P∨⌐Q)=>Q
-
+    (¬P∨¬Q)=>Q
     Suppose
-      ⌐P∨⌐Q
+      ¬P∨¬Q
     Then
       P
-      P∧(⌐P∨⌐Q)
-      (P∧⌐P)∨(P∧⌐Q) by ConjunctionDistributesOverConjunction
-      P∧⌐Q by ContradictionElimination
+      P∧(¬P∨¬Q)
+      (P∧¬P)∨(P∧¬Q) by ConjunctionDistributesOverConjunction
+      P∧¬Q by ContradictionElimination
     Hence
-      ⌐Q
-    (⌐P∨⌐Q)=>⌐Q
+      ¬Q
+    (¬P∨¬Q)=>¬Q
   Therefore
-    ⌐(⌐P∨⌐Q) by NegationIntroduction
+    ¬(¬P∨¬Q) by NegationIntroduction
 
 Rule (DisjunctionImpliesNegationOfConjunctionOfNegations)
   Premise
     P∨Q
   Conclusion
-    ⌐(⌐P∧⌐Q)
+    ¬(¬P∧¬Q)
   Proof
     Suppose
-      ⌐P∧⌐Q
+      ¬P∧¬Q
     Then
-      ⌐Q
-      ⌐Q∧(P∨Q)
-      (P∧⌐Q)∨(Q∧⌐Q) by ConjunctionDistributesOverDisjunction
-      (P∧⌐Q) by ContradictionElimination
+      ¬Q
+      ¬Q∧(P∨Q)
+      (P∧¬Q)∨(Q∧¬Q) by ConjunctionDistributesOverDisjunction
+      (P∧¬Q) by ContradictionElimination
     Hence
       P
-    ⌐P∧⌐Q=>P
-
+    ¬P∧¬Q=>P
     Suppose
-      ⌐P∧⌐Q
+      ¬P∧¬Q
     Hence
-      ⌐P
-    ⌐P∧⌐Q=>⌐P
+      ¬P
+    ¬P∧¬Q=>¬P
   Therefore
-    ⌐(⌐P∧⌐Q) by NegationIntroduction
+    ¬(¬P∧¬Q) by NegationIntroduction
 
 Rule (DisjunctionOfNegationsImpliesNegationOfConjuction)
   Premise
-    ⌐P∨⌐Q
+    ¬P∨¬Q
   Conclusion
-    ⌐(P∧Q)
+    ¬(P∧Q)
   Proof
     Suppose
       P∧Q
     Hence
       Q
     (P∧Q)=>Q
-
     Suppose
       P∧Q
     Then
       P
-      P∧(⌐P∨⌐Q)
-      (P∧⌐P)∨(P∧⌐Q) by ConjunctionDistributesOverDisjunction
-      P∧⌐Q by ContradictionElimination
+      P∧(¬P∨¬Q)
+      (P∧¬P)∨(P∧¬Q) by ConjunctionDistributesOverDisjunction
+      P∧¬Q by ContradictionElimination
     Hence
-      ⌐Q
-    (P∧Q)=>⌐Q
+      ¬Q
+    (P∧Q)=>¬Q
   Therefore
-    ⌐(P∧Q) by NegationIntroduction
+    ¬(P∧Q) by NegationIntroduction
 
 Rule (ConjunctionOfNegationsImpliesNegationOfDisjunction)
   Premise
-    ⌐P∧⌐Q
+    ¬P∧¬Q
   Conclusion
-    ⌐(P∨Q)
+    ¬(P∨Q)
   Proof
-    ⌐P
-    ⌐Q
-
+    ¬P
+    ¬Q
     Suppose
       P∨Q
     Then
-      P=>S by PrincipleOfExplosion
-      Q=>S by PrincipleOfExplosion
+      P=>S by ThePrincipleOfExplosion
+      Q=>S by ThePrincipleOfExplosion
     Hence
-      S by ConstructiveDilema
+      S by ConstructiveDilemma
     P∨Q=>S
-
     Suppose
       P∨Q
     Then
-      P=>⌐S by PrincipleOfExplosion
-      Q=>⌐S by PrincipleOfExplosion
+      P=>¬S by ThePrincipleOfExplosion
+      Q=>¬S by ThePrincipleOfExplosion
     Hence
-      ⌐S by ConstructiveDilema
-    P∨Q=>⌐S
+      ¬S by ConstructiveDilemma
+    P∨Q=>¬S
   Therefore
-    ⌐(P∨Q) by NegationIntroduction
+    ¬(P∨Q) by NegationIntroduction
 
 Rule (NegationOfDisjunctionImpliesConjuctionOfNegations)
   Premise
-    ⌐(P∨Q)
+    ¬(P∨Q)
   Conclusion
-    ⌐P∧⌐Q
+    ¬P∧¬Q
   Proof
     Suppose
       P
     Then
       P∨Q
     Hence 
-      (P∨Q)∧⌐(P∨Q)
-    P=>(P∨Q)∧⌐(P∨Q)
-    ⌐P by NegationIntroduction
-
+      (P∨Q)∧¬(P∨Q)
+    P=>(P∨Q)∧¬(P∨Q)
+    ¬P by NegationIntroduction
     Suppose
       Q
     Then
       P∨Q
     Hence 
-      (P∨Q)∧⌐(P∨Q)
-    Q=>(P∨Q)∧⌐(P∨Q)
-    ⌐Q by NegationIntroduction
+      (P∨Q)∧¬(P∨Q)
+    Q=>(P∨Q)∧¬(P∨Q)
+    ¬Q by NegationIntroduction
   Therefore
-    ⌐P∧⌐Q by ConjunctionIntroduction
+    ¬P∧¬Q by ConjunctionIntroduction
