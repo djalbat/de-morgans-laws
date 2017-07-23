@@ -21,7 +21,7 @@ Rule (ConjunctionImpliesNegationOfDisjunctionOfNegations)
     Then
       P
       P∧(¬P∨¬Q)
-      (P∧¬P)∨(P∧¬Q) by ConjunctionDistributesOverConjunction
+      (P∧¬P)∨(P∧¬Q) by ConjunctionDistributesOverDisjunction
       P∧¬Q by ContradictionElimination
     Hence
       ¬Q
