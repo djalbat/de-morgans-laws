@@ -1,0 +1,25 @@
+include("../Intuitionistic.ocs")
+include("./Stronger material conditional.ocs")
+
+Rule (DisjunctiveSyllogismImpliesDisjunctionElimination)
+  Premises
+    P=>R
+    Q=>R
+    P∨Q
+  Conclusion
+    R
+  Proof
+    P=>R
+    Q=>R
+    P->R by LogicalConsequenceImpliesTheMaterialConditional
+    Q->R by LogicalConsequenceImpliesTheMaterialConditional
+    ¬P∨R by StrongerMaterialConditionalElimination
+    ¬Q∨R by StrongerMaterialConditionalElimination
+    (¬P∨R)∧(¬Q∨R) by ConjunctionIntroduction
+    (¬P∧¬Q)∨R
+    P∨Q
+    ¬(¬P∧¬Q) by DisjunctionImpliesNegationOfConjunctionOfNegations
+    (¬P∧¬Q)∨R
+    ¬(¬P∧¬Q)
+  Therefore
+    R by DisjunctiveSyllogism
