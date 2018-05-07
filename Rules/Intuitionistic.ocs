@@ -29,7 +29,7 @@ Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Therefore
     ¬(¬P∨¬Q) by NegationIntroduction
 
-Rule (DisjunctionInfersNegatedOfConjunctionOfNegations)
+Rule (DisjunctionInfersNegatedConjunctionOfNegations)
   Premise
     P∨Q
   Conclusion
