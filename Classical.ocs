@@ -1,51 +1,4 @@
-include("./Intuitionistic.ocs")
-
-Rule (NegationOfConjunctionOfNegationsImpliesDisjunction)
-  Premise
-    ¬(¬P∧¬Q)
-  Conclusion
-    P∨Q
-  Proof
-    Suppose
-      Q
-    Hence
-      P∨Q by DisjunctionLeftIntroduction
-    Q=>P∨Q
-    Suppose
-      ¬Q
-    Then
-      Suppose
-        ¬P
-      Hence
-        ¬P∧¬Q by ConjunctionIntroduction  
-      ¬P=>(¬P∧¬Q)
-      ¬(¬P∧¬Q)
-      ¬¬P by ModusTollens
-      P by DoubleNegationElimination
-    Hence
-      P∨Q by DisjunctionLeftIntroduction
-    ¬Q=>P∨Q
-    Q∨¬Q by TheLawOfTheExludedMiddle
-  Therefore
-    P∨Q by DisjunctionElimination
-
-Rule (NegationOfDisjunctionOfNegationsImpliesConjunction)
-  Premise
-    ¬(¬P∨¬Q)
-  Conclusion
-    P∧Q
-  Proof
-    Suppose
-      ¬(P∧Q)
-    Hence
-      ¬P∨¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
-    ¬(P∧Q)=>(¬P∨¬Q)
-    ¬(¬P∨¬Q)
-    ¬¬(P∧Q) by ModusTollens
-  Therefore
-    P∧Q by DoubleNegationElimination
-
-Rule (NegationOfConjuctionImpliesDisjunctionOfNegations)
+Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Premise
     ¬(P∧Q)
   Conclusion
@@ -78,3 +31,48 @@ Rule (NegationOfConjuctionImpliesDisjunctionOfNegations)
     ¬¬(¬P∨¬Q) by NegationIntroduction
   Therefore
     ¬P∨¬Q by DoubleNegationElimination
+
+Rule (NegatedConjunctionOfNegationsInfersDisjunction)
+  Premise
+    ¬(¬P∧¬Q)
+  Conclusion
+    P∨Q
+  Proof
+    Suppose
+      Q
+    Hence
+      P∨Q by DisjunctionLeftIntroduction
+    Q=>P∨Q
+    Suppose
+      ¬Q
+    Then
+      Suppose
+        ¬P
+      Hence
+        ¬P∧¬Q by ConjunctionIntroduction  
+      ¬P=>(¬P∧¬Q)
+      ¬(¬P∧¬Q)
+      ¬¬P by ModusTollens
+      P by DoubleNegationElimination
+    Hence
+      P∨Q by DisjunctionLeftIntroduction
+    ¬Q=>P∨Q
+    Q∨¬Q by TheLawOfTheExludedMiddle
+  Therefore
+    P∨Q by DisjunctionElimination
+
+Rule (NegatedDisjunctionOfNegationsInfersConjunction)
+  Premise
+    ¬(¬P∨¬Q)
+  Conclusion
+    P∧Q
+  Proof
+    Suppose
+      ¬(P∧Q)
+    Hence
+      ¬P∨¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
+    ¬(P∧Q)=>(¬P∨¬Q)
+    ¬(¬P∨¬Q)
+    ¬¬(P∧Q) by ModusTollens
+  Therefore
+    P∧Q by DoubleNegationElimination

@@ -1,6 +1,3 @@
-include("../Classical.ocs")
-include("../Intuitionistic.ocs")
-
 Rule (StrongerMaterialConditionalIntroduction)
   Premise
     ¬P∨Q

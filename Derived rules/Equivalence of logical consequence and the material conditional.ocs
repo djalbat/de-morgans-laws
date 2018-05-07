@@ -1,5 +1,3 @@
-include("./Stronger material conditional.ocs")
-
 Rule (LogicalConsequenceImpliesTheMaterialConditional)
   Premise
     P=>Q

@@ -1,4 +1,4 @@
-Rule (ConjunctionImpliesNegationOfDisjunctionOfNegations)
+Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Premise
     P∧Q
   Conclusion
@@ -29,7 +29,7 @@ Rule (ConjunctionImpliesNegationOfDisjunctionOfNegations)
   Therefore
     ¬(¬P∨¬Q) by NegationIntroduction
 
-Rule (DisjunctionImpliesNegationOfConjunctionOfNegations)
+Rule (DisjunctionInfersNegatedOfConjunctionOfNegations)
   Premise
     P∨Q
   Conclusion
@@ -53,7 +53,7 @@ Rule (DisjunctionImpliesNegationOfConjunctionOfNegations)
   Therefore
     ¬(¬P∧¬Q) by NegationIntroduction
 
-Rule (DisjunctionOfNegationsImpliesNegationOfConjuction)
+Rule (DisjunctionOfNegationsInfersNegatedConjuction)
   Premise
     ¬P∨¬Q
   Conclusion
@@ -77,7 +77,7 @@ Rule (DisjunctionOfNegationsImpliesNegationOfConjuction)
   Therefore
     ¬(P∧Q) by NegationIntroduction
 
-Rule (ConjunctionOfNegationsImpliesNegationOfDisjunction)
+Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
   Premise
     ¬P∧¬Q
   Conclusion
@@ -104,7 +104,7 @@ Rule (ConjunctionOfNegationsImpliesNegationOfDisjunction)
   Therefore
     ¬(P∨Q) by NegationIntroduction
 
-Rule (NegationOfDisjunctionImpliesConjuctionOfNegations)
+Rule (NegatedDisjunctionInfersConjuctionOfNegations)
   Premise
     ¬(P∨Q)
   Conclusion

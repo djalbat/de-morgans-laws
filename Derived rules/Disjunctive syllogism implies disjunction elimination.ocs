@@ -1,6 +1,3 @@
-include("../Intuitionistic.ocs")
-include("./Stronger material conditional.ocs")
-
 Rule (DisjunctiveSyllogismImpliesDisjunctionElimination)
   Premises
     P=>R
