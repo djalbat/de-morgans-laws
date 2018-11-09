@@ -36,5 +36,5 @@ The rules are divided into two, with those that can be derived intuitionisticall
 
 ## Contact
 
-* jecs@imperial.ac.uk
+* james.smith@openmathematics.org
 * http://djalbat.com
