@@ -1,0 +1,130 @@
+Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
+  Premise
+    P ∧ Q
+  Conclusion
+    ¬(¬P ∨ ¬Q)
+  Proof
+    P
+    Q
+    Suppose
+      ¬P ∨ ¬Q
+    Then
+      Q
+      Q ∧ (¬P ∨ ¬Q)
+      (¬P ∧ Q) ∨ (¬Q ∧ Q) by ConjunctionDistributesOverDisjunction
+      ¬P∧Q by ContradictionElimination
+    Hence
+      Q
+    (¬P ∨ ¬Q) => Q
+    Suppose
+      ¬P ∨ ¬Q
+    Then
+      P
+      P ∧ (¬P ∨ ¬Q)
+      (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
+      P ∧ ¬Q by ContradictionElimination
+    Hence
+      ¬Q
+    (¬P ∨ ¬Q) => ¬Q
+  Therefore
+    ¬(¬P ∨ ¬Q) by NegationIntroduction
+
+Rule (DisjunctionInfersNegatedConjunctionOfNegations)
+  Premise
+    P ∨ Q
+  Conclusion
+    ¬(¬P ∧ ¬Q)
+  Proof 
+    Suppose
+      ¬P ∧ ¬Q
+    Then
+      ¬Q
+      ¬Q ∧ (P ∨ Q)
+      (P ∧ ¬Q) ∨ (Q ∧ ¬Q) by ConjunctionDistributesOverDisjunction
+      (P ∧ ¬Q) by ContradictionElimination
+    Hence
+      P
+    (¬P ∧ ¬Q) => P
+    Suppose
+      ¬P ∧ ¬Q
+    Hence
+      ¬P
+    (¬P ∧ ¬Q) => ¬P
+  Therefore
+    ¬(¬P ∧ ¬Q) by NegationIntroduction
+
+Rule (DisjunctionOfNegationsInfersNegatedConjuction)
+  Premise
+    ¬P ∨ ¬Q
+  Conclusion
+    ¬(P ∧ Q)
+  Proof
+    Suppose
+      P ∧ Q
+    Hence
+      Q
+    (P ∧ Q) => Q
+    Suppose
+      P ∧ Q
+    Then
+      P
+      P ∧ (¬P ∨ ¬Q)
+      (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
+      P ∧ ¬Q by ContradictionElimination
+    Hence
+      ¬Q
+    (P ∧ Q) => ¬Q
+  Therefore
+    ¬(P ∧ Q) by NegationIntroduction
+
+Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
+  Premise
+    ¬P ∧ ¬Q
+  Conclusion
+    ¬(P ∨ Q)
+  Proof
+    ¬P
+    ¬Q
+    Suppose
+      P ∨ Q
+    Then
+      P => S by PrincipleOfExplosion
+      Q => S by PrincipleOfExplosion
+    Hence
+      S by ConstructiveDilemma
+    (P ∨ Q) => S
+    Suppose
+      P ∨ Q
+    Then
+      P => ¬S by ThePrincipleOfExplosion
+      Q => ¬S by ThePrincipleOfExplosion
+    Hence
+      ¬S by ConstructiveDilemma
+    (P ∨ Q) => ¬S
+  Therefore
+    ¬(P ∨ Q) by NegationIntroduction
+
+Rule (NegatedDisjunctionInfersConjuctionOfNegations)
+  Premise
+    ¬(P ∨ Q)
+  Conclusion
+    ¬P ∧ ¬Q
+  Proof
+    Suppose
+      P
+    Then
+      P ∨ Q
+    Hence 
+      (P ∨ Q) ∧ ¬(P ∨ Q)
+    P => (P ∨ Q) ∧ ¬(P ∨ Q)
+    ¬P by NegationIntroduction
+    Suppose
+      Q
+    Then
+      P ∨ Q
+    Hence 
+      (P ∨ Q) ∧ ¬(P ∨ Q)
+    Q => (P ∨ Q) ∧ ¬(P ∨ Q)
+    ¬Q by NegationIntroduction
+  Therefore
+    ¬P ∧ ¬Q by ConjunctionIntroduction
