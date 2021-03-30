@@ -1,5 +1,5 @@
 {
-  "repository": "https://github.com/jecs-imperial/de-morgans-laws",
+  "repository": "https://github.com/djalbat/de-morgans-laws",
   "dependencies": [
     "classical-propositional-logic"
   ]
