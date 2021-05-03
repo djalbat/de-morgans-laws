@@ -1,6 +1,6 @@
 # De Morgan's Laws
 
-De Morgan's laws for the [Occam](http://occam.science) proof assistant.
+De Morgan's laws for [Occam](https://occam.science).
 
 The rules are divided into two, with those that can be derived intuitionistically distinguished from those that can only be derived classically.
 
@@ -36,5 +36,4 @@ The rules are divided into two, with those that can be derived intuitionisticall
 
 ## Contact
 
-* james.smith@openmathematics.org
 * http://djalbat.com
