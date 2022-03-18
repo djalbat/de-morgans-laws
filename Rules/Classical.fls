@@ -1,11 +1,11 @@
 Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Premise
-    ¬(P ∧ Q)
+   ¬(P /\ Q)
   Conclusion
-    ¬P ∨ ¬Q
+    ¬P \/ ¬Q
   Proof
     Suppose
-      ¬(¬P ∨ ¬Q)
+      ¬(¬P \/ ¬Q)
     Then
       Suppose
         P
@@ -15,64 +15,64 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
         Then
           P
         Hence
-          P ∧ Q    
-        Q => (P ∧ Q)
-        ¬(P ∧ Q)
+          P /\ Q    
+        Q => (P /\ Q)
+        ¬(P /\ Q)
         ¬Q by ModusTollens
       Hence
-        ¬P ∨ ¬Q by DisjunctionLeftIntroduction
-      P => (¬P ∨ ¬Q)
-      ¬(¬P ∨ ¬Q)
+        ¬P \/ ¬Q by DisjunctionLeftIntroduction
+      P => (¬P \/ ¬Q)
+      ¬(¬P \/ ¬Q)
       ¬P by ModusTollens
     Hence
-      ¬P ∨ ¬Q by DisjunctionLeftIntroduction
-    ¬(¬P ∨ ¬Q) => (¬P ∨ ¬Q)
-    ¬(¬P ∨ ¬Q) => ¬(¬P ∨ ¬Q)
-    ¬¬(¬P ∨ ¬Q) by NegationIntroduction
+      ¬P \/ ¬Q by DisjunctionLeftIntroduction
+    ¬(¬P \/ ¬Q) => (¬P \/ ¬Q)
+    ¬(¬P \/ ¬Q) => ¬(¬P \/ ¬Q)
+    ¬¬(¬P \/ ¬Q) by NegationIntroduction
   Therefore
-    ¬P ∨ ¬Q by DoubleNegationElimination
+    ¬P \/ ¬Q by DoubleNegationElimination
 
 Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Premise
-    ¬(¬P ∧ ¬Q)
+    ¬(¬P /\ ¬Q)
   Conclusion
-    P ∨ Q
+    P \/ Q
   Proof
     Suppose
       Q
     Hence
-      P ∨ Q by DisjunctionLeftIntroduction
-    Q => (P ∨ Q)
+      P \/ Q by DisjunctionLeftIntroduction
+    Q => (P \/ Q)
     Suppose
       ¬Q
     Then
       Suppose
         ¬P
       Hence
-        ¬P ∧ ¬Q by ConjunctionIntroduction  
-      ¬P => (¬P ∧ ¬Q)
-      ¬(¬P ∧ ¬Q)
+        ¬P /\ ¬Q by ConjunctionIntroduction  
+      ¬P => (¬P /\ ¬Q)
+      ¬(¬P /\ ¬Q)
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
     Hence
-      P ∨ Q by DisjunctionLeftIntroduction
-    ¬Q => (P ∨ Q)
-    Q ∨ ¬Q by TheLawOfTheExludedMiddle
+      P \/ Q by DisjunctionLeftIntroduction
+    ¬Q => (P \/ Q)
+    Q \/ ¬Q by TheLawOfTheExludedMiddle
   Therefore
-    P ∨ Q by DisjunctionElimination
+    P \/ Q by DisjunctionElimination
 
 Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Premise
-    ¬(¬P ∨ ¬Q)
+    ¬(¬P \/ ¬Q)
   Conclusion
-    P ∧ Q
+    P /\ Q
   Proof
     Suppose
-      ¬(P ∧ Q)
+      ¬(P /\ Q)
     Hence
-      ¬P ∨ ¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
-    ¬(P ∧ Q) => (¬P ∨ ¬Q)
-    ¬(¬P ∨ ¬Q)
-    ¬¬(P ∧ Q) by ModusTollens
+      ¬P \/ ¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
+    ¬(P /\ Q) => (¬P \/ ¬Q)
+    ¬(¬P \/ ¬Q)
+    ¬¬(P /\ Q) by ModusTollens
   Therefore
-    P ∧ Q by DoubleNegationElimination
+    P /\ Q by DoubleNegationElimination
