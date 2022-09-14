@@ -57,7 +57,7 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
     Hence
       P \/ Q by DisjunctionLeftIntroduction
     ¬Q => (P \/ Q)
-    Q \/ ¬Q by TheLawOfTheExludedMiddle
+    Q \/ ¬Q by LawOfTheExludedMiddle
   Therefore
     P \/ Q by DisjunctionElimination
 
