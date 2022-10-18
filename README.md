@@ -4,7 +4,7 @@ De Morgan's laws for [Occam](https://occam.science).
 
 The rules are divided into two, with those that can be derived intuitionistically distinguished from those that can only be derived classically.
 
-## Intuitionistically derivable rules
+## Intuitionistically derived rules
 
 \[
 \frac{P\land{Q}}{\neg(\neg{P}\lor\neg{Q})}\quad\small\text{[ConjunctionInfersNegatedDisjunctionOfNegatives]}
@@ -22,7 +22,7 @@ The rules are divided into two, with those that can be derived intuitionisticall
 \frac{\neg({P}\lor{Q})}{\neg{P}\land\neg{Q}}\quad\small\text{[NegatedDisjunctionInfersConjunctionOfNegations]}
 \]
 
-## Classically derivable rules
+## Classically derived rules
 
 \[
 \frac{\neg({P}\land{Q})}{\neg{P}\lor\neg{Q}}\quad\small\text{[NegatedConjunctionInfersDisjunctionOfNegations]}
