@@ -6,28 +6,26 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Proof
     Suppose
       ¬(¬P \/ ¬Q)
-    Then
+    Hence
       Suppose
         P
-      Then
+      Hence
         Suppose
           Q
-        Then
-          P
         Hence
-          P /\ Q    
-        Q => (P /\ Q)
-        ¬(P /\ Q)
+          P
+        Therefore
+          P /\ Q by ConjunctionIntroduction
+        Q => (P /\ Q) by ImplicationIntroduction
         ¬Q by ModusTollens
-      Hence
+      Therefore
         ¬P \/ ¬Q by DisjunctionLeftIntroduction
-      P => (¬P \/ ¬Q)
-      ¬(¬P \/ ¬Q)
+      P => (¬P \/ ¬Q) by ImplicationIntroduction
       ¬P by ModusTollens
-    Hence
-      ¬P \/ ¬Q by DisjunctionLeftIntroduction
-    ¬(¬P \/ ¬Q) => (¬P \/ ¬Q)
-    ¬(¬P \/ ¬Q) => ¬(¬P \/ ¬Q)
+    Therefore
+      ¬P \/ ¬Q by DisjunctionRightIntroduction
+    ¬(¬P \/ ¬Q) => (¬P \/ ¬Q) by ImplicationIntroduction
+    ¬(¬P \/ ¬Q) => ¬(¬P \/ ¬Q) by TrivialImplication
     ¬¬(¬P \/ ¬Q) by NegationIntroduction
   Therefore
     ¬P \/ ¬Q by DoubleNegationElimination
@@ -40,23 +38,22 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Proof
     Suppose
       Q
-    Hence
+    Therefore
       P \/ Q by DisjunctionLeftIntroduction
-    Q => (P \/ Q)
+    Q => (P \/ Q) by ImplicationIntroduction
     Suppose
       ¬Q
-    Then
+    Hence
       Suppose
         ¬P
-      Hence
+      Therefore
         ¬P /\ ¬Q by ConjunctionIntroduction  
-      ¬P => (¬P /\ ¬Q)
-      ¬(¬P /\ ¬Q)
+      ¬P => (¬P /\ ¬Q) by ImplicationIntroduction
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
-    Hence
+    Therefore
       P \/ Q by DisjunctionLeftIntroduction
-    ¬Q => (P \/ Q)
+    ¬Q => (P \/ Q) by ImplicationIntroduction
     Q \/ ¬Q by LawOfTheExludedMiddle
   Therefore
     P \/ Q by DisjunctionElimination
@@ -69,10 +66,9 @@ Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Proof
     Suppose
       ¬(P /\ Q)
-    Hence
-      ¬P \/ ¬Q by NegationOfConjuctionImpliesDisjunctionOfNegations
-    ¬(P /\ Q) => (¬P \/ ¬Q)
-    ¬(¬P \/ ¬Q)
+    Therefore
+      ¬P \/ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations
+    ¬(P /\ Q) => (¬P \/ ¬Q) by ImplicationIntroduction
     ¬¬(P /\ Q) by ModusTollens
   Therefore
     P /\ Q by DoubleNegationElimination

@@ -4,28 +4,22 @@ Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Conclusion
     ¬(¬P \/ ¬Q)
   Proof
-    P
-    Q
     Suppose
       ¬P \/ ¬Q
-    Then
-      Q
-      Q /\ (¬P \/ ¬Q)
-      (¬P /\ Q) \/ (¬Q /\ Q) by ConjunctionDistributesOverDisjunction
-      ¬P /\ Q by ContradictionElimination
+    Therefore
+      Q by ConjunctionLeftElimination
+    (¬P \/ ¬Q) => Q by ImplicationIntroduction
+    Suppose
+      ¬P \/ ¬Q
     Hence
-      Q
-    (¬P \/ ¬Q) => Q
-    Suppose
-      ¬P \/ ¬Q
-    Then
-      P
-      P /\ (¬P \/ ¬Q)
+      P by ConjunctionRightElimination
+      P /\ (¬P \/ ¬Q) by ConjunctionIntroduction
       (P /\ ¬P) \/ (P /\ ¬Q) by ConjunctionDistributesOverDisjunction
+      (P /\ ¬Q) \/ (P /\ ¬P) by DisjunctionCommutes
       P /\ ¬Q by ContradictionElimination
-    Hence
-      ¬Q
-    (¬P \/ ¬Q) => ¬Q
+    Therefore
+      ¬Q by ConjunctionLeftElimination
+    (¬P \/ ¬Q) => ¬Q by ImplicationIntroduction
   Therefore
     ¬(¬P \/ ¬Q) by NegationIntroduction
 
@@ -37,19 +31,22 @@ Rule (DisjunctionInfersNegatedConjunctionOfNegations)
   Proof 
     Suppose
       ¬P /\ ¬Q
-    Then
-      ¬Q
-      ¬Q /\ (P \/ Q)
-      (P /\ ¬Q) \/ (Q /\ ¬Q) by ConjunctionDistributesOverDisjunction
-      (P /\ ¬Q) by ContradictionElimination
     Hence
-      P
-    (¬P /\ ¬Q) => P
+      ¬Q by ConjunctionLeftElimination
+      ¬Q /\ (P \/ Q) by ConjunctionIntroduction
+      (¬Q /\ P) \/ (¬Q /\ Q) by ConjunctionDistributesOverDisjunction
+      ((¬Q /\ P) \/ ¬Q) /\ ((¬Q /\ P) \/ Q) by DisjunctionDistributesOverConjunction
+      ((¬Q /\ P) \/ Q) /\ ((¬Q /\ P) \/ ¬Q) by ConjunctionCommutes
+      (¬Q /\ P) \/ (Q /\ ¬Q) by DisjunctionDistributedOverConjunction
+      ¬Q /\ P by ContradictionElimination
+    Therefore
+      P by ConjunctionLeftElimination
+    (¬P /\ ¬Q) => P by ImplicationIntroduction
     Suppose
       ¬P /\ ¬Q
-    Hence
-      ¬P
-    (¬P /\ ¬Q) => ¬P
+    Therefore
+      ¬P by ConjunctionRightElimination
+    (¬P /\ ¬Q) => ¬P by ImplicationIntroduction
   Therefore
     ¬(¬P /\ ¬Q) by NegationIntroduction
 
@@ -61,19 +58,20 @@ Rule (DisjunctionOfNegationsInfersNegatedConjuction)
   Proof
     Suppose
       P /\ Q
-    Hence
-      Q
-    (P /\ Q) => Q
+    Therefore
+      Q by ConjunctionLeftElimination
+    (P /\ Q) => Q by ImplicationIntroduction
     Suppose
       P /\ Q
-    Then
-      P
-      P /\ (¬P \/ ¬Q)
-      (P /\ ¬P) \/ (P /\ ¬Q) by ConjunctionDistributesOverDisjunction
-      P /\ ¬Q by ContradictionElimination
     Hence
-      ¬Q
-    (P /\ Q) => ¬Q
+      P by ConjunctionRightElimination
+      P /\ (¬P \/ ¬Q) by ConjunctionIntroduction
+      (P /\ ¬P) \/ (P /\ ¬Q) by ConjunctionDistributesOverDisjunction
+      (P /\ ¬Q) \/ (P /\ ¬P) by DisjunctionCommutes
+      P /\ ¬Q by ContradictionElimination
+    Therefore
+      ¬Q by ConjunctionLeftElimination
+    (P /\ Q) => ¬Q by ImplicationIntroduction
   Therefore
     ¬(P /\ Q) by NegationIntroduction
 
@@ -83,24 +81,24 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
   Conclusion
     ¬(P \/ Q)
   Proof
-    ¬P
-    ¬Q
+    ¬P by ConjunctionRightElimination
+    ¬Q by ConjunctionLeftElimination
     Suppose
       P \/ Q
-    Then
+    Hence
       P => S by PrincipleOfExplosion
       Q => S by PrincipleOfExplosion
-    Hence
-      S by ConstructiveDilemma
-    (P \/ Q) => S
+    Therefore
+      S by DisjunctionElimination
+    (P \/ Q) => S by ImplicationIntroduction
     Suppose
       P \/ Q
-    Then
-      P => ¬S by ThePrincipleOfExplosion
-      Q => ¬S by ThePrincipleOfExplosion
     Hence
-      ¬S by ConstructiveDilemma
-    (P \/ Q) => ¬S
+      P => ¬S by PrincipleOfExplosion
+      Q => ¬S by PrincipleOfExplosion
+    Therefore
+      ¬S by DisjunctionElimination
+    (P \/ Q) => ¬S by ImplicationIntroduction
   Therefore
     ¬(P \/ Q) by NegationIntroduction
 
@@ -112,19 +110,21 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
   Proof
     Suppose
       P
-    Then
-      P \/ Q
-    Hence 
-      (P \/ Q) /\ ¬(P \/ Q)
-    P => (P \/ Q) /\ ¬(P \/ Q)
+    Hence
+      P \/ Q by DisjunctionRightIntroduction
+    Therefore 
+      (P \/ Q) /\ ¬(P \/ Q) by ConjunctionIntroduction
+    P => ((P \/ Q) /\ ¬(P \/ Q)) by ImplicationIntroduction
+    P => (P \/ Q) by ConjunctionRightEliminationWithImplication
+    P => ¬(P \/ Q) by ConjunctionLeftEliminationWithImplication
     ¬P by NegationIntroduction
     Suppose
       Q
-    Then
-      P \/ Q
-    Hence 
-      (P \/ Q) /\ ¬(P \/ Q)
-    Q => (P \/ Q) /\ ¬(P \/ Q)
+    Hence
+      P \/ Q by DisjunctionLeftIntroduction
+    Therefore 
+      (P \/ Q) /\ ¬(P \/ Q) by ConjunctionIntroduction
+    Q => ((P \/ Q) /\ ¬(P \/ Q)) by ImplicationIntroduction
     ¬Q by NegationIntroduction
   Therefore
     ¬P /\ ¬Q by ConjunctionIntroduction
