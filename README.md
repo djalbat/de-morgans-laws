@@ -2,7 +2,7 @@
 
 De Morgan's laws for [Occam](https://occam.science).
 
-The rules are divided into two, with those that can be derived intuitionistically distinguished from those that can only be derived classically.
+The rules are divided into two, namely those that can be derived intuitionistically and those that can only be derived classically.
 
 ## Intuitionistically derived rules
 
