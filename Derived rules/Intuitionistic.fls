@@ -125,6 +125,8 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
     Therefore 
       (P \/ Q) /\ ¬(P \/ Q) by ConjunctionIntroduction
     Q => ((P \/ Q) /\ ¬(P \/ Q)) by ImplicationIntroduction
+    Q => (P \/ Q) by ConjunctionRightEliminationWithImplication
+    Q => ¬(P \/ Q) by ConjunctionLeftEliminationWithImplication
     ¬Q by NegationIntroduction
   Therefore
     ¬P /\ ¬Q by ConjunctionIntroduction
