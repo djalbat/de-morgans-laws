@@ -14,15 +14,15 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
           Q
         Hence
           P
-        Therefore
+        Then
           P /\ Q by ConjunctionIntroduction
         Q => (P /\ Q) by ImplicationIntroduction
         ¬Q by ModusTollens
-      Therefore
+      Then
         ¬P \/ ¬Q by DisjunctionLeftIntroduction
       P => (¬P \/ ¬Q) by ImplicationIntroduction
       ¬P by ModusTollens
-    Therefore
+    Then
       ¬P \/ ¬Q by DisjunctionRightIntroduction
     ¬(¬P \/ ¬Q) => (¬P \/ ¬Q) by ImplicationIntroduction
     ¬(¬P \/ ¬Q) => ¬(¬P \/ ¬Q) by TrivialImplication
@@ -38,7 +38,7 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Proof
     Suppose
       Q
-    Therefore
+    Then
       P \/ Q by DisjunctionLeftIntroduction
     Q => (P \/ Q) by ImplicationIntroduction
     Suppose
@@ -46,12 +46,12 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
     Hence
       Suppose
         ¬P
-      Therefore
+      Then
         ¬P /\ ¬Q by ConjunctionIntroduction  
       ¬P => (¬P /\ ¬Q) by ImplicationIntroduction
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
-    Therefore
+    Then
       P \/ Q by DisjunctionLeftIntroduction
     ¬Q => (P \/ Q) by ImplicationIntroduction
     Q \/ ¬Q by LawOfTheExludedMiddle
@@ -66,7 +66,7 @@ Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Proof
     Suppose
       ¬(P /\ Q)
-    Therefore
+    Then
       ¬P \/ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations
     ¬(P /\ Q) => (¬P \/ ¬Q) by ImplicationIntroduction
     ¬¬(P /\ Q) by ModusTollens
