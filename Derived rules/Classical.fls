@@ -4,13 +4,13 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Conclusion
     ¬P \/ ¬Q
   Proof
-    Suppose
+    Premise
       ¬(¬P \/ ¬Q)
     Hence
-      Suppose
+      Premise
         P
       Hence
-        Suppose
+        Premise
           Q
         Hence
           P
@@ -36,15 +36,15 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Conclusion
     P \/ Q
   Proof
-    Suppose
+    Premise
       Q
     Then
       P \/ Q by DisjunctionLeftIntroduction
     Q => (P \/ Q) by ImplicationIntroduction
-    Suppose
+    Premise
       ¬Q
     Hence
-      Suppose
+      Premise
         ¬P
       Then
         ¬P /\ ¬Q by ConjunctionIntroduction  
@@ -64,7 +64,7 @@ Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Conclusion
     P /\ Q
   Proof
-    Suppose
+    Premise
       ¬(P /\ Q)
     Then
       ¬P \/ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations

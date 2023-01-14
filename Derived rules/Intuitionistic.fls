@@ -4,12 +4,12 @@ Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Conclusion
     ¬(¬P \/ ¬Q)
   Proof
-    Suppose
+    Premise
       ¬P \/ ¬Q
     Then
       Q by ConjunctionLeftElimination
     (¬P \/ ¬Q) => Q by ImplicationIntroduction
-    Suppose
+    Premise
       ¬P \/ ¬Q
     Hence
       P by ConjunctionRightElimination
@@ -29,7 +29,7 @@ Rule (DisjunctionInfersNegatedConjunctionOfNegations)
   Conclusion
     ¬(¬P /\ ¬Q)
   Proof 
-    Suppose
+    Premise
       ¬P /\ ¬Q
     Hence
       ¬Q by ConjunctionLeftElimination
@@ -42,7 +42,7 @@ Rule (DisjunctionInfersNegatedConjunctionOfNegations)
     Then
       P by ConjunctionLeftElimination
     (¬P /\ ¬Q) => P by ImplicationIntroduction
-    Suppose
+    Premise
       ¬P /\ ¬Q
     Then
       ¬P by ConjunctionRightElimination
@@ -56,12 +56,12 @@ Rule (DisjunctionOfNegationsInfersNegatedConjuction)
   Conclusion
     ¬(P /\ Q)
   Proof
-    Suppose
+    Premise
       P /\ Q
     Then
       Q by ConjunctionLeftElimination
     (P /\ Q) => Q by ImplicationIntroduction
-    Suppose
+    Premise
       P /\ Q
     Hence
       P by ConjunctionRightElimination
@@ -83,7 +83,7 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
   Proof
     ¬P by ConjunctionRightElimination
     ¬Q by ConjunctionLeftElimination
-    Suppose
+    Premise
       P \/ Q
     Hence
       P => S by PrincipleOfExplosion
@@ -91,7 +91,7 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
     Then
       S by DisjunctionElimination
     (P \/ Q) => S by ImplicationIntroduction
-    Suppose
+    Premise
       P \/ Q
     Hence
       P => ¬S by PrincipleOfExplosion
@@ -108,7 +108,7 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
   Conclusion
     ¬P /\ ¬Q
   Proof
-    Suppose
+    Premise
       P
     Hence
       P \/ Q by DisjunctionRightIntroduction
@@ -118,7 +118,7 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
     P => (P \/ Q) by ConjunctionRightEliminationWithImplication
     P => ¬(P \/ Q) by ConjunctionLeftEliminationWithImplication
     ¬P by NegationIntroduction
-    Suppose
+    Premise
       Q
     Hence
       P \/ Q by DisjunctionLeftIntroduction
