@@ -47,7 +47,7 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
       Premise
         ¬P
       Then
-        ¬P /\ ¬Q by ConjunctionIntroduction  
+        ¬P /\ ¬Q by ConjunctionIntroduction
       ¬P => (¬P /\ ¬Q) by ImplicationIntroduction
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
