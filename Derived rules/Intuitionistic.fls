@@ -1,3 +1,7 @@
+Metavariable P:Statement
+Metavariable Q:Statement
+Metavariable R:Statement
+
 Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Premise
     P /\ Q
@@ -86,19 +90,19 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
     Premise
       P \/ Q
     Hence
-      P => S by PrincipleOfExplosion
-      Q => S by PrincipleOfExplosion
+      P => R by PrincipleOfExplosion
+      Q => R by PrincipleOfExplosion
     Then
-      S by DisjunctionElimination
-    (P \/ Q) => S by ImplicationIntroduction
+      R by DisjunctionElimination
+    (P \/ Q) => R by ImplicationIntroduction
     Premise
       P \/ Q
     Hence
-      P => ¬S by PrincipleOfExplosion
-      Q => ¬S by PrincipleOfExplosion
+      P => ¬R by PrincipleOfExplosion
+      Q => ¬R by PrincipleOfExplosion
     Then
-      ¬S by DisjunctionElimination
-    (P \/ Q) => ¬S by ImplicationIntroduction
+      ¬R by DisjunctionElimination
+    (P \/ Q) => ¬R by ImplicationIntroduction
   Therefore
     ¬(P \/ Q) by NegationIntroduction
 
