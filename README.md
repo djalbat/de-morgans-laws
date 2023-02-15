@@ -36,4 +36,4 @@ The rules are divided into two, namely those that can be derived intuitionistica
 
 ## Contact
 
-* http://djalbat.com
+* https://djalbat.com
