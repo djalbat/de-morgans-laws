@@ -4,133 +4,133 @@ Metavariable R:Statement
 
 Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
   Premise
-    P /\ Q
+    P ∧ Q
   Conclusion
-    ¬(¬P \/ ¬Q)
+    ¬(¬P ∨ ¬Q)
   Proof
     Premise
-      ¬P \/ ¬Q
+      ¬P ∨ ¬Q
     Then
       Q by ConjunctionLeftElimination
-    (¬P \/ ¬Q) => Q by ImplicationIntroduction
+    (¬P ∨ ¬Q) ⇒ Q by ImplicationIntroduction
     Premise
-      ¬P \/ ¬Q
+      ¬P ∨ ¬Q
     Hence
       P by ConjunctionRightElimination
-      P /\ (¬P \/ ¬Q) by ConjunctionIntroduction
-      (P /\ ¬P) \/ (P /\ ¬Q) by ConjunctionDistributesOverDisjunction
-      (P /\ ¬Q) \/ (P /\ ¬P) by DisjunctionCommutes
-      P /\ ¬Q by ContradictionElimination
+      P ∧ (¬P ∨ ¬Q) by ConjunctionIntroduction
+      (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
+      (P ∧ ¬Q) ∨ (P ∧ ¬P) by DisjunctionCommutes
+      P ∧ ¬Q by ContradictionElimination
     Then
       ¬Q by ConjunctionLeftElimination
-    (¬P \/ ¬Q) => ¬Q by ImplicationIntroduction
+    (¬P ∨ ¬Q) ⇒ ¬Q by ImplicationIntroduction
   Therefore
-    ¬(¬P \/ ¬Q) by NegationIntroduction
+    ¬(¬P ∨ ¬Q) by NegationIntroduction
 
 Rule (DisjunctionInfersNegatedConjunctionOfNegations)
   Premise
-    P \/ Q
+    P ∨ Q
   Conclusion
-    ¬(¬P /\ ¬Q)
+    ¬(¬P ∧ ¬Q)
   Proof 
     Premise
-      ¬P /\ ¬Q
+      ¬P ∧ ¬Q
     Hence
       ¬Q by ConjunctionLeftElimination
-      ¬Q /\ (P \/ Q) by ConjunctionIntroduction
-      (¬Q /\ P) \/ (¬Q /\ Q) by ConjunctionDistributesOverDisjunction
-      ((¬Q /\ P) \/ ¬Q) /\ ((¬Q /\ P) \/ Q) by DisjunctionDistributesOverConjunction
-      ((¬Q /\ P) \/ Q) /\ ((¬Q /\ P) \/ ¬Q) by ConjunctionCommutes
-      (¬Q /\ P) \/ (Q /\ ¬Q) by DisjunctionDistributedOverConjunction
-      ¬Q /\ P by ContradictionElimination
+      ¬Q ∧ (P ∨ Q) by ConjunctionIntroduction
+      (¬Q ∧ P) ∨ (¬Q ∧ Q) by ConjunctionDistributesOverDisjunction
+      ((¬Q ∧ P) ∨ ¬Q) ∧ ((¬Q ∧ P) ∨ Q) by DisjunctionDistributesOverConjunction
+      ((¬Q ∧ P) ∨ Q) ∧ ((¬Q ∧ P) ∨ ¬Q) by ConjunctionCommutes
+      (¬Q ∧ P) ∨ (Q ∧ ¬Q) by DisjunctionDistributedOverConjunction
+      ¬Q ∧ P by ContradictionElimination
     Then
       P by ConjunctionLeftElimination
-    (¬P /\ ¬Q) => P by ImplicationIntroduction
+    (¬P ∧ ¬Q) ⇒ P by ImplicationIntroduction
     Premise
-      ¬P /\ ¬Q
+      ¬P ∧ ¬Q
     Then
       ¬P by ConjunctionRightElimination
-    (¬P /\ ¬Q) => ¬P by ImplicationIntroduction
+    (¬P ∧ ¬Q) ⇒ ¬P by ImplicationIntroduction
   Therefore
-    ¬(¬P /\ ¬Q) by NegationIntroduction
+    ¬(¬P ∧ ¬Q) by NegationIntroduction
 
 Rule (DisjunctionOfNegationsInfersNegatedConjuction)
   Premise
-    ¬P \/ ¬Q
+    ¬P ∨ ¬Q
   Conclusion
-    ¬(P /\ Q)
+    ¬(P ∧ Q)
   Proof
     Premise
-      P /\ Q
+      P ∧ Q
     Then
       Q by ConjunctionLeftElimination
-    (P /\ Q) => Q by ImplicationIntroduction
+    (P ∧ Q) ⇒ Q by ImplicationIntroduction
     Premise
-      P /\ Q
+      P ∧ Q
     Hence
       P by ConjunctionRightElimination
-      P /\ (¬P \/ ¬Q) by ConjunctionIntroduction
-      (P /\ ¬P) \/ (P /\ ¬Q) by ConjunctionDistributesOverDisjunction
-      (P /\ ¬Q) \/ (P /\ ¬P) by DisjunctionCommutes
-      P /\ ¬Q by ContradictionElimination
+      P ∧ (¬P ∨ ¬Q) by ConjunctionIntroduction
+      (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
+      (P ∧ ¬Q) ∨ (P ∧ ¬P) by DisjunctionCommutes
+      P ∧ ¬Q by ContradictionElimination
     Then
       ¬Q by ConjunctionLeftElimination
-    (P /\ Q) => ¬Q by ImplicationIntroduction
+    (P ∧ Q) ⇒ ¬Q by ImplicationIntroduction
   Therefore
-    ¬(P /\ Q) by NegationIntroduction
+    ¬(P ∧ Q) by NegationIntroduction
 
 Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
   Premise
-    ¬P /\ ¬Q
+    ¬P ∧ ¬Q
   Conclusion
-    ¬(P \/ Q)
+    ¬(P ∨ Q)
   Proof
     ¬P by ConjunctionRightElimination
     ¬Q by ConjunctionLeftElimination
     Premise
-      P \/ Q
+      P ∨ Q
     Hence
-      P => R by PrincipleOfExplosion
-      Q => R by PrincipleOfExplosion
+      P ⇒ R by PrincipleOfExplosion
+      Q ⇒ R by PrincipleOfExplosion
     Then
       R by DisjunctionElimination
-    (P \/ Q) => R by ImplicationIntroduction
+    (P ∨ Q) ⇒ R by ImplicationIntroduction
     Premise
-      P \/ Q
+      P ∨ Q
     Hence
-      P => ¬R by PrincipleOfExplosion
-      Q => ¬R by PrincipleOfExplosion
+      P ⇒ ¬R by PrincipleOfExplosion
+      Q ⇒ ¬R by PrincipleOfExplosion
     Then
       ¬R by DisjunctionElimination
-    (P \/ Q) => ¬R by ImplicationIntroduction
+    (P ∨ Q) ⇒ ¬R by ImplicationIntroduction
   Therefore
-    ¬(P \/ Q) by NegationIntroduction
+    ¬(P ∨ Q) by NegationIntroduction
 
 Rule (NegatedDisjunctionInfersConjuctionOfNegations)
   Premise
-    ¬(P \/ Q)
+    ¬(P ∨ Q)
   Conclusion
-    ¬P /\ ¬Q
+    ¬P ∧ ¬Q
   Proof
     Premise
       P
     Hence
-      P \/ Q by DisjunctionRightIntroduction
+      P ∨ Q by DisjunctionRightIntroduction
     Then
-      (P \/ Q) /\ ¬(P \/ Q) by ConjunctionIntroduction
-    P => ((P \/ Q) /\ ¬(P \/ Q)) by ImplicationIntroduction
-    P => (P \/ Q) by ConjunctionRightEliminationWithImplication
-    P => ¬(P \/ Q) by ConjunctionLeftEliminationWithImplication
+      (P ∨ Q) ∧ ¬(P ∨ Q) by ConjunctionIntroduction
+    P ⇒ ((P ∨ Q) ∧ ¬(P ∨ Q)) by ImplicationIntroduction
+    P ⇒ (P ∨ Q) by ConjunctionRightEliminationWithImplication
+    P ⇒ ¬(P ∨ Q) by ConjunctionLeftEliminationWithImplication
     ¬P by NegationIntroduction
     Premise
       Q
     Hence
-      P \/ Q by DisjunctionLeftIntroduction
+      P ∨ Q by DisjunctionLeftIntroduction
     Then
-      (P \/ Q) /\ ¬(P \/ Q) by ConjunctionIntroduction
-    Q => ((P \/ Q) /\ ¬(P \/ Q)) by ImplicationIntroduction
-    Q => (P \/ Q) by ConjunctionRightEliminationWithImplication
-    Q => ¬(P \/ Q) by ConjunctionLeftEliminationWithImplication
+      (P ∨ Q) ∧ ¬(P ∨ Q) by ConjunctionIntroduction
+    Q ⇒ ((P ∨ Q) ∧ ¬(P ∨ Q)) by ImplicationIntroduction
+    Q ⇒ (P ∨ Q) by ConjunctionRightEliminationWithImplication
+    Q ⇒ ¬(P ∨ Q) by ConjunctionLeftEliminationWithImplication
     ¬Q by NegationIntroduction
   Therefore
-    ¬P /\ ¬Q by ConjunctionIntroduction
+    ¬P ∧ ¬Q by ConjunctionIntroduction

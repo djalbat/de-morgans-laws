@@ -3,12 +3,12 @@ Metavariable Q:Statement
 
 Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Premise
-   ¬(P /\ Q)
+   ¬(P ∧ Q)
   Conclusion
-    ¬P \/ ¬Q
+    ¬P ∨ ¬Q
   Proof
     Premise
-      ¬(¬P \/ ¬Q)
+      ¬(¬P ∨ ¬Q)
     Hence
       Premise
         P
@@ -18,60 +18,60 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
         Hence
           P
         Then
-          P /\ Q by ConjunctionIntroduction
-        Q => (P /\ Q) by ImplicationIntroduction
+          P ∧ Q by ConjunctionIntroduction
+        Q ⇒ (P ∧ Q) by ImplicationIntroduction
         ¬Q by ModusTollens
       Then
-        ¬P \/ ¬Q by DisjunctionLeftIntroduction
-      P => (¬P \/ ¬Q) by ImplicationIntroduction
+        ¬P ∨ ¬Q by DisjunctionLeftIntroduction
+      P ⇒ (¬P ∨ ¬Q) by ImplicationIntroduction
       ¬P by ModusTollens
     Then
-      ¬P \/ ¬Q by DisjunctionRightIntroduction
-    ¬(¬P \/ ¬Q) => (¬P \/ ¬Q) by ImplicationIntroduction
-    ¬(¬P \/ ¬Q) => ¬(¬P \/ ¬Q) by TrivialImplication
-    ¬¬(¬P \/ ¬Q) by NegationIntroduction
+      ¬P ∨ ¬Q by DisjunctionRightIntroduction
+    ¬(¬P ∨ ¬Q) ⇒ (¬P ∨ ¬Q) by ImplicationIntroduction
+    ¬(¬P ∨ ¬Q) ⇒ ¬(¬P ∨ ¬Q) by TrivialImplication
+    ¬¬(¬P ∨ ¬Q) by NegationIntroduction
   Therefore
-    ¬P \/ ¬Q by DoubleNegationElimination
+    ¬P ∨ ¬Q by DoubleNegationElimination
 
 Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Premise
-    ¬(¬P /\ ¬Q)
+    ¬(¬P ∧ ¬Q)
   Conclusion
-    P \/ Q
+    P ∨ Q
   Proof
     Premise
       Q
     Then
-      P \/ Q by DisjunctionLeftIntroduction
-    Q => (P \/ Q) by ImplicationIntroduction
+      P ∨ Q by DisjunctionLeftIntroduction
+    Q ⇒ (P ∨ Q) by ImplicationIntroduction
     Premise
       ¬Q
     Hence
       Premise
         ¬P
       Then
-        ¬P /\ ¬Q by ConjunctionIntroduction
-      ¬P => (¬P /\ ¬Q) by ImplicationIntroduction
+        ¬P ∧ ¬Q by ConjunctionIntroduction
+      ¬P ⇒ (¬P ∧ ¬Q) by ImplicationIntroduction
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
     Then
-      P \/ Q by DisjunctionLeftIntroduction
-    ¬Q => (P \/ Q) by ImplicationIntroduction
-    Q \/ ¬Q by LawOfTheExludedMiddle
+      P ∨ Q by DisjunctionLeftIntroduction
+    ¬Q ⇒ (P ∨ Q) by ImplicationIntroduction
+    Q ∨ ¬Q by LawOfTheExludedMiddle
   Therefore
-    P \/ Q by DisjunctionElimination
+    P ∨ Q by DisjunctionElimination
 
 Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Premise
-    ¬(¬P \/ ¬Q)
+    ¬(¬P ∨ ¬Q)
   Conclusion
-    P /\ Q
+    P ∧ Q
   Proof
     Premise
-      ¬(P /\ Q)
+      ¬(P ∧ Q)
     Then
-      ¬P \/ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations
-    ¬(P /\ Q) => (¬P \/ ¬Q) by ImplicationIntroduction
-    ¬¬(P /\ Q) by ModusTollens
+      ¬P ∨ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations
+    ¬(P ∧ Q) ⇒ (¬P ∨ ¬Q) by ImplicationIntroduction
+    ¬¬(P ∧ Q) by ModusTollens
   Therefore
-    P /\ Q by DoubleNegationElimination
+    P ∧ Q by DoubleNegationElimination
