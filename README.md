@@ -34,6 +34,10 @@ The rules are divided into two, namely those that can be derived intuitionistica
 \frac{\neg(\neg{P}\lor\neg{Q})}{P\land{Q}}\quad\small\text{[NegatedDisjunctionOfNegationsInfersConjunction]}
 \]
 
+## Resources
+
+[Do De Morgan's laws hold in propositional intuitionistic logic?](https://math.stackexchange.com/questions/120187/do-de-morgans-laws-hold-in-propositional-intuitionistic-logic)
+
 ## Contact
 
 * https://djalbat.com
