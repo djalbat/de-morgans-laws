@@ -17,6 +17,7 @@ Rule (ConjunctionInfersNegatedDisjunctionOfNegations)
       ¬P ∨ ¬Q
     Hence
       P by ConjunctionRightElimination
+      ¬P ∨ ¬Q
       P ∧ (¬P ∨ ¬Q) by ConjunctionIntroduction
       (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
       (P ∧ ¬Q) ∨ (P ∧ ¬P) by DisjunctionCommutes
@@ -37,6 +38,7 @@ Rule (DisjunctionInfersNegatedConjunctionOfNegations)
       ¬P ∧ ¬Q
     Hence
       ¬Q by ConjunctionLeftElimination
+      P ∨ Q
       ¬Q ∧ (P ∨ Q) by ConjunctionIntroduction
       (¬Q ∧ P) ∨ (¬Q ∧ Q) by ConjunctionDistributesOverDisjunction
       ((¬Q ∧ P) ∨ ¬Q) ∧ ((¬Q ∧ P) ∨ Q) by DisjunctionDistributesOverConjunction
@@ -69,6 +71,7 @@ Rule (DisjunctionOfNegationsInfersNegatedConjuction)
       P ∧ Q
     Hence
       P by ConjunctionRightElimination
+      ¬P ∨ ¬Q
       P ∧ (¬P ∨ ¬Q) by ConjunctionIntroduction
       (P ∧ ¬P) ∨ (P ∧ ¬Q) by ConjunctionDistributesOverDisjunction
       (P ∧ ¬Q) ∨ (P ∧ ¬P) by DisjunctionCommutes
@@ -90,7 +93,9 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
     Premise
       P ∨ Q
     Hence
+      ¬P
       P ⇒ R by PrincipleOfExplosion
+      ¬Q
       Q ⇒ R by PrincipleOfExplosion
     Then
       R by DisjunctionElimination
@@ -98,7 +103,9 @@ Rule (ConjunctionOfNegationsInfersNegatedDisjunction)
     Premise
       P ∨ Q
     Hence
+      ¬P
       P ⇒ ¬R by PrincipleOfExplosion
+      ¬Q
       Q ⇒ ¬R by PrincipleOfExplosion
     Then
       ¬R by DisjunctionElimination
@@ -116,6 +123,7 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
       P
     Hence
       P ∨ Q by DisjunctionRightIntroduction
+      ¬(P ∨ Q)
     Then
       (P ∨ Q) ∧ ¬(P ∨ Q) by ConjunctionIntroduction
     P ⇒ ((P ∨ Q) ∧ ¬(P ∨ Q)) by ImplicationIntroduction
@@ -126,11 +134,14 @@ Rule (NegatedDisjunctionInfersConjuctionOfNegations)
       Q
     Hence
       P ∨ Q by DisjunctionLeftIntroduction
+      ¬(P ∨ Q)
     Then
       (P ∨ Q) ∧ ¬(P ∨ Q) by ConjunctionIntroduction
     Q ⇒ ((P ∨ Q) ∧ ¬(P ∨ Q)) by ImplicationIntroduction
     Q ⇒ (P ∨ Q) by ConjunctionRightEliminationWithImplication
     Q ⇒ ¬(P ∨ Q) by ConjunctionLeftEliminationWithImplication
     ¬Q by NegationIntroduction
+    ¬P
+    ¬Q
   Therefore
     ¬P ∧ ¬Q by ConjunctionIntroduction

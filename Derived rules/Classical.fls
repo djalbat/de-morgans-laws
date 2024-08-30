@@ -17,9 +17,11 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
           Q
         Hence
           P
+          Q
         Then
           P ∧ Q by ConjunctionIntroduction
         Q ⇒ (P ∧ Q) by ImplicationIntroduction
+        ¬(P ∧ Q)
         ¬Q by ModusTollens
       Then
         ¬P ∨ ¬Q by DisjunctionLeftIntroduction
@@ -49,11 +51,15 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
     Hence
       Premise
         ¬P
+      Hence
+        ¬Q
       Then
         ¬P ∧ ¬Q by ConjunctionIntroduction
       ¬P ⇒ (¬P ∧ ¬Q) by ImplicationIntroduction
+      ¬(¬P ∧ ¬Q)
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
+      Q
     Then
       P ∨ Q by DisjunctionLeftIntroduction
     ¬Q ⇒ (P ∨ Q) by ImplicationIntroduction
