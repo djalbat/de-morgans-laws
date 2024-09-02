@@ -1,6 +1,7 @@
 Metavariable P:Statement
 Metavariable Q:Statement
 
+###
 Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Premise
    ¬(P ∧ Q)
@@ -34,6 +35,7 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
     ¬¬(¬P ∨ ¬Q) by NegationIntroduction
   Therefore
     ¬P ∨ ¬Q by DoubleNegationElimination
+###
 
 Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Premise
@@ -59,14 +61,14 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
       ¬(¬P ∧ ¬Q)
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
-      Q
     Then
-      P ∨ Q by DisjunctionLeftIntroduction
+      P ∨ Q by DisjunctionRightIntroduction
     ¬Q ⇒ (P ∨ Q) by ImplicationIntroduction
     Q ∨ ¬Q by LawOfTheExludedMiddle
   Therefore
     P ∨ Q by DisjunctionElimination
 
+###
 Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Premise
     ¬(¬P ∨ ¬Q)
@@ -81,3 +83,4 @@ Rule (NegatedDisjunctionOfNegationsInfersConjunction)
     ¬¬(P ∧ Q) by ModusTollens
   Therefore
     P ∧ Q by DoubleNegationElimination
+###
