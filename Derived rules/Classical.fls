@@ -7,13 +7,13 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
   Conclusion
     ¬P ∨ ¬Q
   Proof
-    Premise
+    Suppose
       ¬(¬P ∨ ¬Q)
     Hence
-      Premise
+      Suppose
         P
       Hence
-        Premise
+        Suppose
           Q
         Hence
           P
@@ -41,15 +41,15 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
   Conclusion
     P ∨ Q
   Proof
-    Premise
+    Suppose
       Q
     Then
       P ∨ Q by DisjunctionLeftIntroduction
     Q ⇒ (P ∨ Q) by ImplicationIntroduction
-    Premise
+    Suppose
       ¬Q
     Hence
-      Premise
+      Suppose
         ¬P
       Hence
         ¬Q
@@ -72,7 +72,7 @@ Rule (NegatedDisjunctionOfNegationsInfersConjunction)
   Conclusion
     P ∧ Q
   Proof
-    Premise
+    Suppose
       ¬(P ∧ Q)
     Then
       ¬P ∨ ¬Q by NegatedConjuctionInfersDisjunctionOfNegations
