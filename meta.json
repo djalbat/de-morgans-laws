@@ -1,7 +1,7 @@
 {
-  "version": "2.0.1",
+  "version": "3.0.0",
   "repository": "https://github.com/djalbat/de-morgans-laws",
   "dependencies": {
-    "classical-propositional-logic": "2.0"
+    "classical-propositional-logic": "3.0"
   }
 }
