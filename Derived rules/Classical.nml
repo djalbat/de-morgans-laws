@@ -62,7 +62,7 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
     Then
       P ∨ Q by DisjunctionRightIntroduction
     ¬Q ⇒ (P ∨ Q) by ImplicationIntroduction
-    Q ∨ ¬Q by LawOfTheExludedMiddle
+    Q ∨ ¬Q by TheLawOfTheExludedMiddle
   Therefore
     P ∨ Q by DisjunctionElimination
 
