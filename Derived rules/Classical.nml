@@ -24,11 +24,11 @@ Rule (NegatedConjuctionInfersDisjunctionOfNegations)
         ¬(P ∧ Q)
         ¬Q by ModusTollens
       Then
-        ¬P ∨ ¬Q by DisjunctionLeftIntroduction
+        ¬P ∨ ¬Q by DisjunctionRightIntroduction
       P ⇒ (¬P ∨ ¬Q) by ImplicationIntroduction
       ¬P by ModusTollens
     Then
-      ¬P ∨ ¬Q by DisjunctionRightIntroduction
+      ¬P ∨ ¬Q by DisjunctionLeftIntroduction
     ¬(¬P ∨ ¬Q) ⇒ (¬P ∨ ¬Q) by ImplicationIntroduction
     ¬(¬P ∨ ¬Q) ⇒ ¬(¬P ∨ ¬Q) by TrivialImplication
     ¬¬(¬P ∨ ¬Q) by NegationIntroduction
@@ -44,7 +44,7 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
     Suppose
       Q
     Then
-      P ∨ Q by DisjunctionLeftIntroduction
+      P ∨ Q by DisjunctionRightIntroduction
     Q ⇒ (P ∨ Q) by ImplicationIntroduction
     Suppose
       ¬Q
@@ -60,9 +60,9 @@ Rule (NegatedConjunctionOfNegationsInfersDisjunction)
       ¬¬P by ModusTollens
       P by DoubleNegationElimination
     Then
-      P ∨ Q by DisjunctionRightIntroduction
+      P ∨ Q by DisjunctionLeftIntroduction
     ¬Q ⇒ (P ∨ Q) by ImplicationIntroduction
-    Q ∨ ¬Q by TheLawOfTheExludedMiddle
+    Q ∨ ¬Q by LawOfTheExludedMiddle
   Therefore
     P ∨ Q by DisjunctionElimination
 
